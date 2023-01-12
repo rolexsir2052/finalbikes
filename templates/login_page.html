@@ -1,0 +1,104 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>login</title>
+    <style>
+        body{
+            margin:0px;
+        }
+        #nav_1{
+            display: flex;
+            justify-content: space-between;
+            background-color: rgb(78, 74, 74);
+            height:55px;
+        }
+        #nav_1>div{
+            width: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #nav_1>div>a{
+            text-decoration: none;
+            padding: 10px; 
+            color: white;    
+        }
+        #nav_1>h1{
+            padding-left: 50px;
+            margin-top: 13px;
+            color: white;
+        }
+        #landing-page{
+            background: url("{% static 'images/bullet_1.PNG'%}") no-repeat 0px 0px scroll;
+            height: 100vh;
+            background-size: cover;
+        }
+        
+        #landing-page>form{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height:496px;
+            text-align: center;
+            flex-direction: column;
+            padding-left: 281px;
+        }
+        #landing-page>form label[for="n"],label[for="p"]{
+            color:blue;
+            margin: 10px;
+        }
+        #landing-page>form input[name="n"]{
+            padding:14px 71px;
+        }
+        #landing-page>form input[name="p"]{
+            padding:4px 21px;
+        }
+        #L{
+            color: green;
+            font-size: 30px;
+        }
+        #un{
+            background-color: white;
+            height: 2px;
+            width: 341px;
+            position: relative;
+            top: 50px;
+        }
+        form input[type="submit"]{
+            margin-top: 10px;
+        }
+        #r{
+            color: blue;
+            font-size: 27px;
+            position: relative;
+            left: 103px;
+            top: 57px;
+        }
+    </style>
+</head>
+<body>
+    <nav id="nav_1">
+        <h1>Pavan_ kalyan bikes</h1>
+        <div>
+            <a href="{% url 'register'%}" target='blank'>Register</a>
+            <a href="{% url 'contact' %}" target='blank'>Contact</a>
+        </div>
+    </nav>
+    <div id="landing-page">
+            <form  method="POST">
+                {% csrf_token %}
+                <label for="" id="L">Login</label><br>
+                <label for="n">username</label>
+                <input type="text" name="n" id="n">
+                <label for="p">password</label>
+                <input type="password" name="p" id="p">
+                <input type="submit" value="Login">
+                <div id="un"></div>
+                <div id="r">Register</div>
+            </form>
+            
+            
+    </div>
+</body>
+</html>

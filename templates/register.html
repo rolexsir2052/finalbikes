@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Register</title>
+    <style>
+        #main{
+            margin: 0px 450px;
+        }
+        #main>form{
+            border: 1px solid black;
+            display: flex;
+            flex-direction: column;
+           
+        }
+        #main>form>h1{
+            text-align: center;
+            font-size: 26px;
+            margin: 5px 7px 12px 1px;
+        }
+        #main>form>label{
+            text-align: center;
+            margin-top: 15px;
+        }
+        #main>form input[type="text"],input[type="email"],input[type="password"]{
+            margin: 8px 18px 8px 9px;
+            padding: 3px 2px 7px 10px;
+        }
+        #main>form input[type="submit"]{
+            background-color: blue;
+        }
+        #main>form>label[for="n"]{
+            margin-left: -282px;
+        }
+        #hr{
+            height: 1px;
+            background-color: rgb(205, 197, 197);
+        }
+        #main>form>input[type="submit"]{
+            background-color: blue;
+            margin: 0px 16px 0px 8px;
+            padding: 11px 9px 8px 0px;
+            color: white;
+            border: none;
+            border-radius: 10px;
+        }
+        #main p{
+            font-size: 13px;
+            padding: 0px 46px 8px 42px;
+        }
+        #foot{
+            text-align: center;
+            padding-bottom: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <form  method="POST">
+            {% csrf_token %}
+            <h1>Sign Up</h1>
+            <div id="hr"></div>
+            <label for="n">username</label>
+            <input type="text" name="n" id="n" placeholder="enter your name">
+            <label for="e">Email adress</label>
+            <input type="email" name="e" id="e" placeholder="enter your email">
+            <label for="p">Create password</label>
+            <input type="password" name="p" id="p">
+            <input type="submit" value="Register">
+            <p>By clicking the "sign up" button,you confirm that you accept our Terms of use and privacy policy.</p>
+            <div id="foot">Have an account?<a href="">Log in</a></div>
+        </form>
+    </div>
+</body>
+</html>

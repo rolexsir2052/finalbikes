@@ -1,0 +1,179 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home</title>
+    <style>
+        body{
+            margin:0px;
+        }
+        #nav_1{
+            display: flex;
+            justify-content: space-between;
+            background-color: rgb(78, 74, 74);
+            height:55px;
+        }
+        #nav_1>div{
+            width: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #nav_1>div>a{
+            text-decoration: none;
+            padding: 10px; 
+            color: white;    
+        }
+        #nav_1>h1{
+            padding-left: 50px;
+            margin-top: 13px;
+            color: white;
+        }
+        #main>form{
+            display: inline-flex;
+            flex-direction: column;
+            padding: 53px;
+            height: 264px;
+            width: 390px;
+            text-align: center;
+            border: 1px solid black;
+            margin-left: 203px;
+            background: rgba(252, 249, 249, 1);
+        }
+        #main>form>label{
+            padding: 15px;
+        }
+        #main>form>input[type="submit"]{
+            width: 65px;
+            background-color: blue;
+            color: white;
+            border: none;
+            outline: none;
+            padding: 5px 10px;
+            margin-left: 326px;
+            border-radius: 5px;
+        }
+        #head>img{
+            height: 219px;
+            width: 541px;
+            border-radius: 10px;
+            margin-left: 206px;
+        }
+        #up{
+            text-align: center;
+        }
+        #head>div{
+            height: 21px;
+            width: 20px;
+            border: 2px solid black;
+            background-color: darkgrey;
+            text-align: center;
+        }
+        #d1{
+            position: relative;
+            top: 122px;
+            left: 100px;
+        }
+        #d2{
+            position: relative;
+            left: 842px;
+            top: -117px;
+        }
+        #head>div:hover{
+            background-color: black;
+            color: white;
+        }
+        #main>#B{
+            padding-left: 121px;
+        }
+        #main>h2{
+            padding-left: 140px;
+            font-size: 16px;
+        }
+        #img_1>h1{
+            text-align: center;
+        }
+        #img_1>h3{
+            text-align: center;
+            padding-left: 10px;
+        }
+        #img_1>img{
+            height: 200px;
+            width: 350px;
+            padding-left:484px;
+        }
+        #img_2>h3{
+            text-align: center;
+            padding-left: 10px;
+        }
+        #img_2>img{
+            height: 200px;
+            width: 350px;
+            padding-left:484px;
+        }
+        #img_3>h3{
+            text-align: center;
+            padding-left: 10px;
+        }
+        #img_3>img{
+            height: 200px;
+            width: 350px;
+            padding-left:484px;
+        }
+        #img_4>h3{
+            text-align: center;
+            padding-left: 10px;
+        }
+        #img_4>img{
+            height: 200px;
+            width: 350px;
+            padding-left:484px;
+        }
+    </style>
+</head>
+<body>
+    <nav id="nav_1">
+        <h1>Pavan_ kalyan bikes</h1>
+        <div>
+            <a href="{% url 'admin:index' %}" target='blank'>Admin</a>
+            <a href="{% url 'register'%}" target='blank'>Register</a>
+            <a href="">user:{{request.user}}</a>
+            <a href="{% url 'contact'%}" target='blank'>Contact</a>
+            <a href="{% url 'logout_user'%}" target='blank'>logout</a>
+        </div>
+    </nav>
+    <h1 id="up">Upcoming Bikes</h1>
+    <div id="head">
+        <div id="d1">></div>
+        <img src="{% static 'images/bullet_2.jpg'%}">
+        <div id="d2">></div>
+    </div>
+    <div id="main">
+        <h1 id="B">Bikes</h1>
+        <h2><a href="https://www.google.com/search?q=hero+bikes&sxsrf=AJOqlzU0DD6LtP6DRcOxwe2x3lrGXGWplQ:1673512176792&source=lnms&tbm=isch&sa=X&sqi=2&ved=2ahUKEwiIwMzWzsH8AhW0lOYKHUsuCLMQ_AUoAXoECAEQAw&biw=1280&bih=520&dpr=1.5" target="blank">Hero</a></h2>
+        <h2><a href="https://www.google.com/search?q=bajaj+bikes&tbm=isch&ved=2ahUKEwiP6K7YzsH8AhU6BLcAHXEVA18Q2-cCegQIABAA&oq=bajaj+bikes&gs_lcp=CgNpbWcQAzIHCAAQsQMQQzIKCAAQgAQQsQMQDTIHCAAQgAQQDTIECAAQQzIHCAAQgAQQDTIHCAAQgAQQDTIHCAAQgAQQDTIECAAQQzIHCAAQgAQQDTIHCAAQgAQQDToECCMQJzoICAAQgAQQsQM6BQgAEIAEOgQIABADOgYIABAHEB5QxARYoxRgnR9oAHAAeACAAXCIAfEGkgEDOS4xmAEAoAEBqgELZ3dzLXdpei1pbWfAAQE&sclient=img&ei=9MS_Y4-eHrqI3LUP8aqM-AU&bih=520&biw=1280" target="blank">Bajaj</a></h2>
+        <h2><a href="https://www.google.com/search?q=honda+bikes&tbm=isch&ved=2ahUKEwimxq7wzsH8AhXDKbcAHTX4AWgQ2-cCegQIABAA&oq=honda+bikes&gs_lcp=CgNpbWcQAzIHCAAQsQMQQzIECAAQAzIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEOgQIIxAnOgoIABCABBCxAxANOgcIABCABBANOgYIABAHEB46BAgAEENQqQVYxhhgyyNoAHAAeACAAfEBiAH3CJIBBTkuMS4xmAEAoAEBqgELZ3dzLXdpei1pbWfAAQE&sclient=img&ei=JsW_Y6abMsPT3LUPtfCHwAY&bih=520&biw=1280" target="blank">Honda</a></h2>
+    </div>
+    <div id="img_1">
+        <h1>Upcoming Bikes</h1>
+        <h3>Bike name: <a href="">NS_200</a> </h3>
+        <img src="{% static 'images/ns_200.jpg'%}" alt="">
+        <h3>price:RS. <a href="https://www.zigwheels.com/newbikes/Bajaj/Pulsar-200NS/bs6#leadform" target='blank'>2,00,000</a></h3>
+    </div>
+    <div id="img_2">
+        <h3>Bike name: <a href="">Java</a> </h3>
+        <img src="{% static 'images/java.jpg'%}" alt="">
+        <h3>price:RS. <a href="https://www.drivespark.com/bikes/jawa-motorcycles/" target='blank'>5,00,000</a></h3>
+    </div>
+    <div id="img_3">
+        <h3>Bike name: <a href="">RX_100</a> </h3>
+        <img src="{% static 'images/rx_100.jfif'%}" alt="">
+        <h3>price:RS. <a href="https://autos.maxabout.com/bikes/yamaha/rx/rx-100" target='blank'>1,00,000</a>/h3>
+    </div>
+    <div id="img_4">
+        <h3>Bike name: <a href="">Royal_Enfield</a> </h3>
+        <img src="{% static 'images/re.webp'%}" alt="">
+        <h3>price:RS. <a href="https://www.autocarindia.com/bikes/royal-enfield/classic-350" target='blank'>3,00,000</a></h3>
+    </div>
+</body>
+</html>

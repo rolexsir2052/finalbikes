@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>contact</title>
+    <style>
+        body{
+            margin:0px;
+        }
+        #nav_1{
+            display: flex;
+            justify-content: space-between;
+            background-color: rgb(78, 74, 74);
+            height:55px;
+        }
+        #nav_1>div{
+            width: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #nav_1>div>a{
+            text-decoration: none;
+            padding: 10px; 
+            color: white;    
+        }
+        #nav_1>h1{
+            padding-left: 50px;
+            margin-top: 13px;
+            color: white;
+        }
+        #main>form{
+            display: inline-flex;
+            flex-direction: column;
+            padding:53px 30px;
+            height: 284px;
+            width: 390px;
+            text-align: center;
+            border: 1px solid black;
+            margin:0px 300px;
+            background: rgba(252, 249, 249, 1);
+        }
+        #main>form>label{
+            padding: 15px;
+        }
+        #main>form>input[type="submit"]{
+            width: 65px;
+            background-color: blue;
+            color: white;
+            border: none;
+            outline: none;
+            padding: 5px 10px;
+            margin-left: 326px;
+            border-radius: 5px;
+        }
+        span{
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <nav id="nav_1">
+        <h1>Pavan_ kalyan bikes</h1>
+        <div>
+            <a href="{% url 'register'%}" target='blank'>Register</a>
+            <a href="">Contact</a>
+        </div>
+    </nav>
+    <div id="main">
+        <form method="POST">
+            {% csrf_token %}
+            <span>Contact us</span>
+            <label for="n">Name</label>
+            <input type="text" name="n" id="n" placeholder="enter your name">
+            <label for="e">Email</label>
+            <input type="email" name="e" id="e" placeholder="enter your email">
+            <label for="m">your<br>message</label>
+            <input type="text" name="m" id="m" placeholder="enter your message">
+            <input type="submit" value="submit">
+        </form>
+    </div>
+</body>
+</html>
