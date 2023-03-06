@@ -17,10 +17,10 @@ def register(request):
     return render(request,'register.html')
 def contact(request):
     if request.method=='POST':
-        n=request.POST.get('n')
+        names=request.POST.get('n')
         e=request.POST.get('e')
         m=request.POST.get('m')
-        C=Contact.objects.get_or_create(name=n,email=e,message=m)[0]
+        C=Contact.objects.get_or_create(name=names,email=e,message=m)[0]
         C.save()
         return redirect('home')
     return render(request,'contact.html')
